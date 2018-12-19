@@ -1,0 +1,76 @@
+$html-bg: hsl(0, 0%, 96%);
+$input-hover-bg: hsl(0, 0%, 96%);
+$input-checked-bg: hsl(0, 0%, 96%);
+$input-checked-color: hsl(348, 100%, 61%);
+
+input {
+	&[type='radio'],
+	&[type='checkbox'] {
+		display: none;
+		+ label {
+			span {
+				display: block;
+				font-weight: normal;
+				padding: .5rem;
+				text-align: center;
+				line-height: 0;
+				&:hover {
+					background: $input-hover-bg;
+					border-radius: .4rem;
+					cursor: pointer;
+				}
+			}
+		}
+		&:checked {
+			+ label {
+				background: $input-checked-bg;
+				border-radius: .4rem;
+				color: $input-checked-color;
+			}
+		}
+	}
+	&.indicator {
+		&[type='radio'] {
+			&:checked {
+				+ label {
+					i {
+						&:before {
+							content: '\f192';
+						}
+					}
+				}
+			}
+		}
+		&[type='checkbox'] {
+			&:checked {
+				+ label {
+					i {
+						&:before {
+							content: '\f14a';
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.paymentType {
+	input {
+		&[type='radio'] {
+			+ label {
+				span {
+					display: block;
+					padding: 1rem 0;
+					span {
+						&:last-child {
+							line-height: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.fa-paypal {}
